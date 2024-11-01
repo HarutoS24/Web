@@ -1,9 +1,21 @@
 name: demo
 
-on: [push]
+on: 
+  push:
+    branches:
+      -master
 
 jobs:
-  echo_hello:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Hi"
+  runs-on: ubuntu-latest
+  
+  steps:
+    - name: Deploy
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        port: ${{ secrets.SSH_PORT }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd ${{ secrets.SERVER_DEPLOY_DIR }}
+          git pull origin master
+    
