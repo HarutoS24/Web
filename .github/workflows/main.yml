@@ -1,3 +1,9 @@
+name: demo
+
+on: [push]
+
 jobs:
-my_first_job:
-name: My first job
+  echo_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hi"
