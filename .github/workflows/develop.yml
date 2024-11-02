@@ -17,5 +17,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ${{ secrets.SERVER_DEPLOY_DIR_DEV }}
-            git pull origin master
+            git pull origin develop
     
