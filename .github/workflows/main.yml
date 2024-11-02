@@ -1,4 +1,4 @@
-name: sync_website_data
+name: sync_website_data_pub
 
 on: 
   push:
