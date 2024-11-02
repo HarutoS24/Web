@@ -7,7 +7,7 @@ jobs:
     name: print
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ secrets.SERVER_USERNAME }}  
+      - run: echo ${{ secrets.SERVER_USERNAME }} | sed 's/./& /g'
   build:
     runs-on: ubuntu-latest
     steps:
