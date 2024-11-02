@@ -11,7 +11,7 @@ jobs:
         with:
           user: ${{ secrets.SERVER_USERNAME }}
           host: ${{ secrets.SERVER_HOST }}
-          port: ${{ secrets.SSH_PORT }}
+          port: 22
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ${{ secrets.SERVER_DEPLOY_DIR }}
