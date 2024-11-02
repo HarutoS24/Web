@@ -3,7 +3,7 @@ name: sync_website_data
 on: 
   push:
     branches:
-      main
+      master
 jobs:
  build:
     runs-on: ubuntu-latest
