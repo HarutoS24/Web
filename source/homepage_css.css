@@ -1,27 +1,76 @@
 @charset "UTF-8";
 
-body {  
+body {
   font-size: 16px;
   overflow-x: hidden;
+  background-color: #111;
+  color: white;
 }
 
-img{
+body .shortpage {
+  overflow-y: hidden;
+}
+
+img {
   width: 100%
 }
 
-.fadein{
+table tr {
+  width: 100%;
+  justify-content: space-between;
+  height: 80px;
+}
+
+table {
+  width: 100%
+}
+
+table th {
+  width: 30%;
+  position: relative;
+  text-align: center;
+}
+
+table td {
+  width: 70%;
+  padding: 5px;
+  text-align: center;
+}
+
+table th span:after {
+  display: block;
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0px;
+}
+
+table tr:nth-child(even) {
+  background-color: #333;
+  color: white;
+}
+
+table tr:nth-child(odd) {
+  background-color: white;
+  color: black;
+}
+
+.fadein {
   position: relative;
   transform: translateY(100px);
   opacity: 0;
 }
 
-.fadein.show{
+.fadein.show {
   transition: 0.8s ease-in-out;
   opacity: 1;
   transform: translateY(20px);
 }
 
-.inimage_text{
+.inimage_text {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,16 +81,16 @@ img{
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
-  }
+}
 
-.slideshow-wrapper{
+.slideshow-wrapper {
   width: 100%;
   height: 50vw;
   position: relative;
   overflow-x: hidden;
 }
 
-.slides-concat{
+.slides-concat {
   transition: 0.8s ease-in-out;
   width: 300%;
   display: flex;
@@ -50,27 +99,27 @@ img{
   align-items: center;
 }
 
-.slide1{
+.slide1 {
   transform: translateX(0);
 }
 
-.slide2{
+.slide2 {
   transform: translateX(-33.33%);
 }
 
-.slide3{
+.slide3 {
   transform: translateX(-66.66%);
 }
 
-.content{
-  width:100%;
+.content {
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.content p{
+.content p {
   width: 100%;
   font-size: 9vw;
   text-align: center;
@@ -78,32 +127,32 @@ img{
 }
 
 
-.prev_button{
+.prev_button {
   position: absolute;
   cursor: pointer;
   width: 5vw;
   height: 5vw;
   left: 10px;
   bottom: 50%;
-  border-top: solid 3px #000;
-  border-left: solid 3px #000;
+  border-top: solid 5px #000;
+  border-left: solid 5px #000;
   transform: rotate(-45deg) translateY(50%);
   z-index: 10;
 }
 
-.next_button{
+.next_button {
   position: absolute;
   cursor: pointer;
   width: 5vw;
   height: 5vw;
   right: 10px;
   bottom: 50%;
-  border-top: solid 3px #000;
-  border-right: solid 3px #000;
+  border-top: solid 5px #000;
+  border-right: solid 5px #000;
   transform: rotate(45deg) translateY(50%);
 }
 
-.indicator{
+.indicator {
   position: absolute;
   width: 100%;
   bottom: 20px;
@@ -113,7 +162,7 @@ img{
   list-style: none;
 }
 
-.dot{
+.dot {
   border: 5px #000 solid;
   width: 14px;
   height: 14px;
@@ -122,77 +171,81 @@ img{
   cursor: pointer;
 }
 
-.black{
+.black {
   background-color: #000;
 }
 
-
-
-.g_navi ul{
-display: flex;
-margin: 0 auto;
-padding: 0;
-width: auto;
-}
-.g_navi ul li{
-flex: 1 0 auto;
-position: relative;
-list-style: none;
+.g_navi ul {
+  position: sticky;
+  top: 0;
 }
 
-
-
-.g_navi a{
-display: block;
-padding: 14px 20px;
-color:white;
-background-color: black;
-text-align: center;
-text-decoration: none;
-border-bottom: solid 2px red;
+.g_navi ul {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  width: auto;
 }
 
-.menu a:hover{
+.g_navi ul li {
+  flex: 1 0 auto;
+  position: relative;
+  list-style: none;
+}
+
+
+
+.g_navi a {
+  display: block;
+  padding: 14px 20px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: solid 2px red;
+}
+
+.menu a:hover {
   color: red;
   transition: 0.5s all;
 }
 
-.menu a::after{
-display: block;
+.menu a::after {
+  display: block;
   content: "";
   width: 10px;
   height: 4px;
-  transform: scale(0,1);
+  transform: scale(0, 1);
   transform-origin: left top;
   background-color: red;
 
-bottom: 50%;
-left: 10px;
-position: absolute;
-transition: 0.2s;
+  bottom: 50%;
+  left: 10px;
+  position: absolute;
+  transition: 0.2s;
 }
 
-.menu::after{
-display: inline-block;
+.menu::after {
+  display: inline-block;
   content: "";
   width: 10px;
   height: 4px;
- transform: scale(0,1);
+  transform: scale(0, 1);
   transform-origin: right top;
   background-color: red;
-bottom: 50%;
-right: 10px;
-position: absolute;
-transition: 0.2s;
+  bottom: 50%;
+  right: 10px;
+  position: absolute;
+  transition: 0.2s;
 }
 
 
-.menu a:hover::after{
-transform: scale(1,1);
-transition: 0.5s
+.menu a:hover::after {
+  transform: scale(1, 1);
+  transition: 0.5s
 }
 
-.menu:hover::after{
-transform: scale(1,1);
-transition: 0.5s
+.menu:hover::after {
+  transform: scale(1, 1);
+  transition: 0.5s
 }
