@@ -1,14 +1,9 @@
 name: demo
 
 on: 
-  [workflow_dispatch]
+  [push]
 jobs:
-  print:
-    name: print
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ secrets.SERVER_USERNAME }} | sed 's/./& /g'
-  build:
+ build:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
