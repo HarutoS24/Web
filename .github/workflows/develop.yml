@@ -1,4 +1,4 @@
-name: sync_website_data
+name: sync_website_data_dev
 
 on: 
   push:
@@ -8,7 +8,7 @@ jobs:
  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy-pub
+      - name: Deploy-dev
         uses: appleboy/ssh-action@master
         with:
           username: ${{ secrets.SERVER_USERNAME }}
