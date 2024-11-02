@@ -1,0 +1,21 @@
+name: sync_website_data
+
+on: 
+  push:
+    branches:
+      develop
+jobs:
+ build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy-pub
+        uses: appleboy/ssh-action@master
+        with:
+          username: ${{ secrets.SERVER_USERNAME }}
+          host: ${{ secrets.SERVER_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ secrets.SERVER_DEPLOY_DIR_DEV }}
+            git pull origin master
+    
