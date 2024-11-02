@@ -4,7 +4,7 @@ body {
   font-size: 16px;
   overflow-x: hidden;
   background-color: #111;
-  color: white
+  color: white;
 }
 
 img {
@@ -33,27 +33,6 @@ table td {
   text-align: center;
 }
 
-table th span:after {
-  display: block;
-  content: "";
-  width: 30px;
-  height: 2px;
-  background-color: #333;
-  position: absolute;
-  top: calc(50% - 1px);
-  right: 0px;
-}
-
-table tr:nth-child(even) {
-  background-color: #333;
-  color: white;
-}
-
-table tr:nth-child(odd) {
-  background-color: white;
-  color: black;
-}
-
 .fadein {
   position: relative;
   transform: translateY(100px);
@@ -67,11 +46,11 @@ table tr:nth-child(odd) {
 }
 
 table tr:nth-child(odd) {
-  background-color: gray;
+  background-color: #222;
 }
 
 table tr:nth-child(even) {
-  background-color: #333;
+  background-color: #555;
 }
 
 .inimage_text {
