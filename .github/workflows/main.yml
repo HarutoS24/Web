@@ -3,11 +3,14 @@ name: demo
 on: 
   [workflow_dispatch]
 jobs:
+  print:
+    name: print
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ secrets.SERVER_USERNAME }}  
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: print
-        run: echo ${{ secrets.SERVER_USERNAME }}
       - name: Deploy
         uses: appleboy/ssh-action@master
         with:
